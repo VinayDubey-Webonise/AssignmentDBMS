@@ -3,6 +3,10 @@ DELIMITER //
    BEGIN
    	DECLARE total int;
     DECLARE pid int;
+														  
+select percentage into dis from discounts where id=dis_id;
+														  
+   	SELECT SUM(total_amount)*dis/100 into total FROM cart;
    	SELECT SUM(total_amount) into total FROM cart;
 	
 	insert into payments(user_id,payment_status,amount,payment_date,payment_mode_id,discount_id) values(usr_id,"Success",total,current_date(),pay_mode,dis_id);
