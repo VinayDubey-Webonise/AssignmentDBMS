@@ -1,7 +1,7 @@
 DELIMITER //
- CREATE or replace PROCEDURE empty_cart_procedure()
+ CREATE or replace PROCEDURE empty_cart_procedure(IN userid int)
    BEGIN
-   	TRUNCATE TABLE cart;
+   	Delete from cart where user_id=userid;
    
    END //
  DELIMITER ;
