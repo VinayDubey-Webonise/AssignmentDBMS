@@ -16,7 +16,7 @@ read_loop: LOOP
 	INSERT INTO order_products(order_id,user_id,variant_id) VALUES(oid,usr_id,var_id);
  END LOOP;
 
-CALL empty_cart_procedure();
+CALL empty_cart_procedure(usr_id);
 
 close cur1;
    END //
